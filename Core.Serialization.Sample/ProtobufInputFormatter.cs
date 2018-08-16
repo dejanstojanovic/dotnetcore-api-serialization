@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Net.Http.Headers;
 using System.Threading.Tasks;
+using ProtoBuf;
 
 namespace Core.Serialization.Sample
 {
@@ -21,16 +22,19 @@ namespace Core.Serialization.Sample
 
         public override bool CanRead(InputFormatterContext context)
         {
-            //return base.CanRead(context);
             return true;
         }
 
         public override Task<InputFormatterResult> ReadRequestBodyAsync(InputFormatterContext context)
         {
-            
-            var inputData = context.HttpContext.Request.Body;
+            var type = context.ModelType;
+            var request = context.HttpContext.Request;
+            MediaTypeHeaderValue requestContentType = null;
+            MediaTypeHeaderValue.TryParse(request.ContentType, out requestContentType);
 
-            throw new NotImplementedException();
+
+            object result = Serializer.Deserialize(context.HttpContext.Request.Body);
+            return InputFormatterResult.SuccessAsync(result);
         }
     }
 }

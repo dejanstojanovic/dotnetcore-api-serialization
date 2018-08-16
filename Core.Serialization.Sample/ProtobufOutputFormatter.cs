@@ -6,6 +6,7 @@ using System.Linq;
 using Microsoft.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Text;
+using ProtoBuf;
 
 namespace Core.Serialization.Sample
 {
@@ -13,12 +14,8 @@ namespace Core.Serialization.Sample
     {
         public ProtobufOutputFormatter()
         {
-            this.SupportedMediaTypes.Clear();
-
             this.SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("application/x-protobuf"));
             //this.SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("application/x-google-protobuf"));
-
-
             
         }
 
@@ -30,12 +27,12 @@ namespace Core.Serialization.Sample
 
         public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context)
         {
-            var resultObject = context.Object;
-            byte[] serializedData= new byte[] { };
-            var outputStream = new MemoryStream();
-            context.HttpContext.Response.Body = outputStream;
 
-            return outputStream.WriteAsync(serializedData, 0, serializedData.Length);
+            var response = context.HttpContext.Response;
+
+            Serializer.Serialize(response.Body, context.Object);
+            return Task.FromResult(response);
+
         }
     }
 }

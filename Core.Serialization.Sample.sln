@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Serialization.Sample", "Core.Serialization.Sample\Core.Serialization.Sample.csproj", "{544001D5-936F-4179-8E18-E608894A4026}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Serialization.Sample", "Core.Serialization.Sample\Core.Serialization.Sample.csproj", "{544001D5-936F-4179-8E18-E608894A4026}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{2345D50D-FE0D-47C6-9C9B-75A9FC92EF73}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "protobuf", "protobuf", "{667C630D-A80C-4E75-B38F-EC9AF6743CC1}"
+	ProjectSection(SolutionItems) = preProject
+		..\rtb-trackers\tools\protogen\protobuf-net.dll = ..\rtb-trackers\tools\protogen\protobuf-net.dll
+		..\rtb-trackers\tools\protogen\protobuf-net.dll.VisualState.xml = ..\rtb-trackers\tools\protogen\protobuf-net.dll.VisualState.xml
+		..\rtb-trackers\tools\protogen\protobuf-net.Reflection.dll = ..\rtb-trackers\tools\protogen\protobuf-net.Reflection.dll
+		..\rtb-trackers\tools\protogen\protogen.deps.json = ..\rtb-trackers\tools\protogen\protogen.deps.json
+		..\rtb-trackers\tools\protogen\protogen.dll = ..\rtb-trackers\tools\protogen\protogen.dll
+		..\rtb-trackers\tools\protogen\protogen.ps1 = ..\rtb-trackers\tools\protogen\protogen.ps1
+		..\rtb-trackers\tools\protogen\protogen.runtimeconfig.dev.json = ..\rtb-trackers\tools\protogen\protogen.runtimeconfig.dev.json
+		..\rtb-trackers\tools\protogen\protogen.runtimeconfig.json = ..\rtb-trackers\tools\protogen\protogen.runtimeconfig.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +32,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{667C630D-A80C-4E75-B38F-EC9AF6743CC1} = {2345D50D-FE0D-47C6-9C9B-75A9FC92EF73}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {183C9582-CBC4-48D0-AA6D-6EDC361976B1}

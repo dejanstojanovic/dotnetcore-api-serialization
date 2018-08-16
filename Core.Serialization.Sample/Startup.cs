@@ -24,7 +24,7 @@ namespace Core.Serialization.Sample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(options=>{
+            services.AddMvc(options=>{             
                 options.InputFormatters.Insert(0,new ProtobufInputFormatter());
                 options.OutputFormatters.Insert(0,new ProtobufOutputFormatter());
             });
