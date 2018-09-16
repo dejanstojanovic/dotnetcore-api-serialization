@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace Core.Serialization.Sample
 {
@@ -26,8 +19,11 @@ namespace Core.Serialization.Sample
         {
             services.AddMvc(options =>
             {
-                options.InputFormatters.Insert(0, new ProtobufInputFormatter());
-                options.OutputFormatters.Insert(0, new ProtobufOutputFormatter());
+                options.InputFormatters.Clear();
+                options.OutputFormatters.Clear();
+
+                options.InputFormatters.Add(new ProtobufInputFormatter());
+                options.OutputFormatters.Add(new ProtobufOutputFormatter());
             });
         }
 
