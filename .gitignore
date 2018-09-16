@@ -16,6 +16,8 @@
 [Rr]elease/
 [Rr]eleases/
 bld/
+bin/
+obj/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
