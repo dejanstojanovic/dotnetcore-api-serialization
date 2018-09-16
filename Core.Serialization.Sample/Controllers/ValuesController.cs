@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Core.Serialization.Sample.Models;
+﻿using Core.Serialization.Sample.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core.Serialization.Sample.Controllers
@@ -25,8 +21,9 @@ namespace Core.Serialization.Sample.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] Person value)
+        public Person Post([FromBody] Person value)
         {
+            return value;
         }
     }
 }
