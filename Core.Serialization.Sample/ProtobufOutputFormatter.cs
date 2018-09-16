@@ -1,11 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Formatters;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Microsoft.Net.Http.Headers;
 using System.Threading.Tasks;
-using System.Text;
 using ProtoBuf;
 
 namespace Core.Serialization.Sample
@@ -14,15 +9,13 @@ namespace Core.Serialization.Sample
     {
         public ProtobufOutputFormatter()
         {
-            this.SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("application/x-protobuf"));
-            //this.SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("application/x-google-protobuf"));
-            
+            this.SupportedMediaTypes.Clear();
+            this.SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("application/x-protobuf"));           
         }
 
         public override bool CanWriteResult(OutputFormatterCanWriteContext context)
         {
-            return true;
-            //return base.CanWriteResult(context);
+            return base.CanWriteResult(context);
         }
 
         public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context)

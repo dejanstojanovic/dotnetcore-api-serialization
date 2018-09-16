@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "protobuf", "protobuf", "{66
 		..\rtb-trackers\tools\protogen\protogen.runtimeconfig.json = ..\rtb-trackers\tools\protogen\protogen.runtimeconfig.json
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Serialization.Abstraction", "Core.Serialization.Abstraction\Core.Serialization.Abstraction.csproj", "{7DBAD730-B382-4871-9E83-3E0E1DDB1EB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{544001D5-936F-4179-8E18-E608894A4026}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{544001D5-936F-4179-8E18-E608894A4026}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{544001D5-936F-4179-8E18-E608894A4026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DBAD730-B382-4871-9E83-3E0E1DDB1EB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DBAD730-B382-4871-9E83-3E0E1DDB1EB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DBAD730-B382-4871-9E83-3E0E1DDB1EB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DBAD730-B382-4871-9E83-3E0E1DDB1EB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

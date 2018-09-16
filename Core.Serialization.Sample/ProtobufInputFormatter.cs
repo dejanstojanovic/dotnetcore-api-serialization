@@ -12,17 +12,13 @@ namespace Core.Serialization.Sample
     {
         public ProtobufInputFormatter()
         {
-
             this.SupportedMediaTypes.Clear();
-
             this.SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("application/x-protobuf"));
-            //this.SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("application/x-google-protobuf"));
-
         }
 
         public override bool CanRead(InputFormatterContext context)
         {
-            return true;
+            return base.CanRead(context);
         }
 
         public override Task<InputFormatterResult> ReadRequestBodyAsync(InputFormatterContext context)
@@ -33,7 +29,7 @@ namespace Core.Serialization.Sample
             MediaTypeHeaderValue.TryParse(request.ContentType, out requestContentType);
 
 
-            object result = Serializer.Deserialize(context.HttpContext.Request.Body);
+            object result = Serializer.Deserialize(type, context.HttpContext.Request.Body);
             return InputFormatterResult.SuccessAsync(result);
         }
     }
