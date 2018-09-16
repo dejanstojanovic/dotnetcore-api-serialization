@@ -10,6 +10,8 @@ namespace Core.Serialization.Sample
         public ProtobufOutputFormatter()
         {
             this.SupportedMediaTypes.Clear();
+
+            //Look for specific media type declared with Content-Type header in request
             this.SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("application/x-protobuf"));           
         }
 

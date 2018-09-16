@@ -19,9 +19,6 @@ namespace Core.Serialization.Sample
         {
             services.AddMvc(options =>
             {
-                options.InputFormatters.Clear();
-                options.OutputFormatters.Clear();
-
                 options.InputFormatters.Add(new ProtobufInputFormatter());
                 options.OutputFormatters.Add(new ProtobufOutputFormatter());
             });
